@@ -14,7 +14,6 @@ public class LineRenderBehaviour : MonoBehaviour
         lineRenderer.positionCount = 2;
         lineRenderer.startColor = Color.blue;
         lineRenderer.endColor = Color.red;
-
     }
 
     // Update is called once per frame
