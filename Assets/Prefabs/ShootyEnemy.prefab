@@ -96,12 +96,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 937fb13a30dc793448f2d58a5cd4cea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player_objects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   bullet: {fileID: 9149039526150800584, guid: 4b0b767876938374d802b9e51422a534, type: 3}
   startLerpingDistance: 2
+  rot_speed: 20
   maximum_dist: 5
   speed: 20
 --- !u!50 &694729719996007662

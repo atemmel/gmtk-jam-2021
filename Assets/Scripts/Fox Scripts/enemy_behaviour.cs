@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class enemy_behaviour : MonoBehaviour
 {
-    public List<GameObject> player_objects;
+    GameObject[] player_objects;
     public GameObject bullet;
     public float startLerpingDistance;
     public float rot_speed;
@@ -24,8 +24,10 @@ public class enemy_behaviour : MonoBehaviour
     {
         //enemy_velocity = getPositionDiff().normalized*speed;
         timer = Time.realtimeSinceStartup;
+        player_objects = new GameObject[] { GameObject.FindGameObjectWithTag("ship_left"), GameObject.FindGameObjectWithTag("ship_right"), GameObject.FindGameObjectWithTag("cargo")};
         check_mag = getPositionDiff(player_objects[0]).magnitude;
         rot_timer = Time.realtimeSinceStartup;
+
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class enemy_behaviour : MonoBehaviour
 
     void closeObjectLogic()
     {
-        for (int i = 0; i < player_objects.Count; i++)
+        for (int i = 0; i < player_objects.Length; i++)
         {
             new_mag = getPositionDiff(player_objects[i]).magnitude;
             if (new_mag < check_mag)
