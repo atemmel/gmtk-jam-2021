@@ -54,6 +54,9 @@ public class enemy_behaviour : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = newVelocity;
         }
 
+        //Look at player
+        transform.up = (player_objects[closest_object].transform.position - transform.position) * -1;
+
         //Kulor som skickas
         if (Time.realtimeSinceStartup - timer > 2)
         {
