@@ -15,7 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += Vector3.forward*speed*Input.GetAxis("Vertical")*Time.deltaTime;
+        transform.position += Vector3.up*speed*Input.GetAxis("Vertical")*Time.deltaTime;
         transform.position += Vector3.right * speed * Input.GetAxis("Horizontal") * Time.deltaTime;
     }
 }
