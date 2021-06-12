@@ -398,9 +398,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 435657515}
-  bullet: {fileID: 5124593270081174770, guid: c1a998d59ce7d6e499cbb6b499627e93, type: 3}
+  bullet: {fileID: 9149039526150800584, guid: 4b0b767876938374d802b9e51422a534, type: 3}
   startLerpingDistance: 2
-  maximum_dist: 2
+  maximum_dist: 5
   speed: 20
 --- !u!50 &1425814090
 Rigidbody2D:
