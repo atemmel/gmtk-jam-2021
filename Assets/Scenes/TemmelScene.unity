@@ -1124,9 +1124,13 @@ PrefabInstance:
     - target: {fileID: 3116184517857245089, guid: 392e6de9406a1454b9d11a077844e49d, type: 3}
       propertyPath: enemy
       value: 
-      objectReference: {fileID: 4334715566444708451, guid: 96b531b5818c3544399bbb7bee9ba7b8, type: 3}
+      objectReference: {fileID: 8706022899032230705, guid: 3407194ef7204aa40a0402524e1de775, type: 3}
     - target: {fileID: 3116184517857245089, guid: 392e6de9406a1454b9d11a077844e49d, type: 3}
       propertyPath: spawnInterval
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3116184517857245089, guid: 392e6de9406a1454b9d11a077844e49d, type: 3}
+      propertyPath: randomRotation
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3116184517857245090, guid: 392e6de9406a1454b9d11a077844e49d, type: 3}
