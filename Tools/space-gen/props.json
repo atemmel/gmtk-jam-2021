@@ -1,0 +1,23 @@
+[
+	{
+		"File": "props/star_1.png",
+		"Nframes": 5,
+		"PartWidth": 5,
+		"PartHeight": 5,
+		"Bias": 0.50
+	},
+	{
+		"File": "props/star_2.png",
+		"Nframes": 5,
+		"PartWidth": 5,
+		"PartHeight": 5,
+		"Bias": 0.10
+	},
+	{
+		"File": "props/star_3.png",
+		"Nframes": 5,
+		"PartWidth": 5,
+		"PartHeight": 5,
+		"Bias": 0.40
+	}
+]
