@@ -6,6 +6,7 @@ public class EnemySpawnerBehaviour : MonoBehaviour
 {
 	public GameObject enemy;
 	public float spawnInterval;
+	public bool randomRotation;
 
 	float collectedTime = 0.0f;
 
@@ -30,7 +31,8 @@ public class EnemySpawnerBehaviour : MonoBehaviour
 
 			var vec = new Vector3(x, transform.position.y, transform.position.z);
 
-			Instantiate(enemy, vec, Quaternion.identity);
+			//Instantiate(enemy, vec, Quaternion.identity);
+			Instantiate(enemy, vec, randomRotation ? Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward) : Quaternion.identity);
 			collectedTime = 0.0f;
 		}
     }
