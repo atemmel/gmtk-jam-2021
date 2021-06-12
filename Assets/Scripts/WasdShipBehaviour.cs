@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class WasdShipBehaviour : MonoBehaviour
 {
-    public float playerSpeed;
+    public float acceleration;
     private Rigidbody2D ourRigidbody;
+    private Vector2 inputVector;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,14 @@ public class WasdShipBehaviour : MonoBehaviour
     private void Update()
     {
         //WASD to Move        
-        Vector2 inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        ourRigidbody.velocity = inputVector * playerSpeed;
+        inputVector = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized;
+        //ourRigidbody.velocity = inputVector * playerSpeed;
+
+        //ourRigidbody.AddForce(inputVector * acceleration);
+    }
+
+    private void FixedUpdate()
+    {
+        ourRigidbody.AddForce(inputVector * acceleration);
     }
 }
