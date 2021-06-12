@@ -20,9 +20,9 @@ public class ZipperBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _renderer = GetComponent<Renderer>();
+        _renderer = GetComponentInChildren<Renderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        //_rigidbody.AddForce(Vector2.down * 50);
+        _rigidbody.AddRelativeForce(Vector2.down * 500);
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class ZipperBehaviour : MonoBehaviour
     {
         //_rigidbody.MovePosition(_rigidbody.position + new Vector2(0.0f, velocity));
 
-        _rigidbody.velocity = Vector2.down * 5;
+        //_rigidbody.velocity = Vector2.down * 5;
 
         if (_renderer.isVisible && storedTime < EnterTime)
         {

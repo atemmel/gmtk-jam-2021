@@ -15,6 +15,14 @@ public class FollowCrosshair : MonoBehaviour
     void Start()
     {
         ourRigidbody2D = GetComponent<Rigidbody2D>();
+        if (targetTransform.name == "MouseCrosshair")
+        {
+            References.MouseShip = gameObject;
+        }
+        else if (targetTransform.name == "WasdCrosshair")
+        {
+            References.WasdShip = gameObject;
+        }
     }
 
     // Update is called once per frame

@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - ship_left
+  tags: [ship_left]
   layers:
   - Default
   - TransparentFX
@@ -15,7 +14,7 @@ TagManager:
   - playerBullet
   - player
   - 
-  - 
+  - asteroid
   - 
   - 
   - 
