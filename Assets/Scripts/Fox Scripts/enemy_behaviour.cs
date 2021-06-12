@@ -25,7 +25,7 @@ public class enemy_behaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Vector3 pos_diff = getPositionDiff();
+        //Move kinda close to player
         var targetPosition = player.transform.position + ((transform.position - player.transform.position).normalized * maximum_dist);
         var positionDelta = targetPosition - transform.position;
         var newVelocity = positionDelta.normalized * speed;
@@ -38,6 +38,9 @@ public class enemy_behaviour : MonoBehaviour
         {
             GetComponent<Rigidbody2D>().velocity = newVelocity;
         }
+
+        //Look at player
+        transform.up = (player.transform.position - transform.position) * -1;
 
         //var targetPosition = transform.position;
         //if (getPositionDiff().magnitude > minimum_dist)
