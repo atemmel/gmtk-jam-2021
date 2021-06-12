@@ -7,6 +7,7 @@ public class FollowCrosshair : MonoBehaviour
     public Transform targetTransform;
     public float trackingSpeed;
     public float startLerpingDistance;
+    public GameObject bulletPrefab;
 
     Rigidbody2D ourRigidbody2D;
 
@@ -29,6 +30,12 @@ public class FollowCrosshair : MonoBehaviour
         else
         {
             ourRigidbody2D.velocity = newVelocity;
+        }
+
+        if (Input.GetMouseButtonDown(1))
+        {
+            var bullet = Instantiate(bulletPrefab);
+            bullet.transform.position = transform.position;
         }
     }
 }

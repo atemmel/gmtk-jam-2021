@@ -182,6 +182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: player_ship_right
       objectReference: {fileID: 0}
+    - target: {fileID: 5044400915477456490, guid: 7c0b643a240dac046ba0e9f754670ec4, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0b643a240dac046ba0e9f754670ec4, type: 3}
 --- !u!1 &621044416 stripped
@@ -203,8 +207,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 2053274616}
   trackingSpeed: 18
-  stopTrackingDistance: 0.1
   startLerpingDistance: 2
+  bulletPrefab: {fileID: 9149039526150800584, guid: 64e3004c4ce1746478f72abd9aa8af8f, type: 3}
 --- !u!50 &621044418
 Rigidbody2D:
   serializedVersion: 4
@@ -225,7 +229,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &621044420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +244,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkToYank: {fileID: 2057084686}
   keyToPress: Fire2
+--- !u!70 &621044422
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621044416}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.2, y: 0.5}
+  m_Direction: 0
 --- !u!4 &649202182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8799174492655505117, guid: 27b8d3a2f8c92dd48ab7adcdf7b4f367, type: 3}
@@ -371,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8513542811338551234, guid: 5780abd5317efcf419671abefb0509f8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513542811338551234, guid: 5780abd5317efcf419671abefb0509f8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -437,7 +457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8513542811338551234, guid: 5780abd5317efcf419671abefb0509f8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8513542811338551234, guid: 5780abd5317efcf419671abefb0509f8, type: 3}
       propertyPath: m_LocalRotation.w
@@ -531,6 +551,10 @@ PrefabInstance:
     - target: {fileID: 5044400915477456490, guid: 7c0b643a240dac046ba0e9f754670ec4, type: 3}
       propertyPath: m_Name
       value: player_ship_left
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044400915477456490, guid: 7c0b643a240dac046ba0e9f754670ec4, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0b643a240dac046ba0e9f754670ec4, type: 3}
@@ -978,8 +1002,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 823362501}
   trackingSpeed: 18
-  stopTrackingDistance: 0.1
   startLerpingDistance: 2
+  bulletPrefab: {fileID: 9149039526150800584, guid: 64e3004c4ce1746478f72abd9aa8af8f, type: 3}
 --- !u!114 &2092273174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1014,7 +1038,23 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
+--- !u!70 &2092273178
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092273172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.2, y: 0.5}
+  m_Direction: 0
 --- !u!1001 &3116184519067263235
 PrefabInstance:
   m_ObjectHideFlags: 0
