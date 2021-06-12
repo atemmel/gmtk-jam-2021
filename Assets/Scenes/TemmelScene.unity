@@ -1129,6 +1129,10 @@ PrefabInstance:
       propertyPath: spawnInterval
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3116184517857245089, guid: 392e6de9406a1454b9d11a077844e49d, type: 3}
+      propertyPath: randomRotation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3116184517857245090, guid: 392e6de9406a1454b9d11a077844e49d, type: 3}
       propertyPath: m_Name
       value: EnemySpawner

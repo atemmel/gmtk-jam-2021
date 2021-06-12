@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class enemy_behaviour : MonoBehaviour
 {
-    public GameObject player;
+    public List<GameObject> player_objects;
     public GameObject bullet;
     //Vector3 enemy_velocity;
     //Vector3 acc;
     public float startLerpingDistance;
 
+    float check_mag;
+    float new_mag;
+    int closest_object;
     public int maximum_dist;
     //public int minimum_dist;
     public float speed;
@@ -20,13 +23,25 @@ public class enemy_behaviour : MonoBehaviour
     {
         //enemy_velocity = getPositionDiff().normalized*speed;
         timer = Time.realtimeSinceStartup;
+        check_mag = getPositionDiff(player_objects[0]).magnitude;
     }
 
     // Update is called once per frame
     void Update()
     {
+        for (int i = 0; i < player_objects.Count; i++)
+        {
+            new_mag = getPositionDiff(player_objects[i]).magnitude;
+            if (new_mag < check_mag)
+            {
+                check_mag = new_mag;
+                closest_object = i;
+            }
+        }
+        check_mag = getPositionDiff(player_objects[closest_object]).magnitude;
+
         //Vector3 pos_diff = getPositionDiff();
-        var targetPosition = player.transform.position + ((transform.position - player.transform.position).normalized * maximum_dist);
+        var targetPosition = player_objects[closest_object].transform.position + ((transform.position - player_objects[closest_object].transform.position).normalized * maximum_dist);
         var positionDelta = targetPosition - transform.position;
         var newVelocity = positionDelta.normalized * speed;
 
@@ -39,32 +54,25 @@ public class enemy_behaviour : MonoBehaviour
             GetComponent<Rigidbody2D>().velocity = newVelocity;
         }
 
-        //var targetPosition = transform.position;
-        //if (getPositionDiff().magnitude > minimum_dist)
-        //{
-        //    targetPosition = player.transform.position + ((transform.position - player.transform.position).normalized * minimum_dist);
-        //}
-        //else if (getPositionDiff().magnitude < maximum_dist)
-        //{
-        //    targetPosition = player.transform.position + ((transform.position - player.transform.position).normalized * maximum_dist);
-        //}
+        //Look at player
+        transform.up = (player_objects[closest_object].transform.position - transform.position) * -1;
 
         //Kulor som skickas
         if (Time.realtimeSinceStartup - timer > 2)
         {
             var bull = Instantiate(bullet, transform.position, transform.rotation);
-            var velocity = getPositionDiff().normalized;
+            var velocity = getPositionDiff(player_objects[closest_object]).normalized;
             bull.GetComponent<Rigidbody2D>().velocity = velocity;
             timer = Time.realtimeSinceStartup;
         }
     }
 
-    Vector3 getPositionDiff()
+    Vector3 getPositionDiff(GameObject player)
     {
         return player.transform.position - transform.position;
     }
 
-    float getAngle()
+    float getAngle(GameObject player)
     {
         return Vector3.Angle(transform.position, player.transform.position);
     }
