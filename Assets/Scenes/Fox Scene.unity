@@ -312,6 +312,7 @@ GameObject:
   - component: {fileID: 1425814088}
   - component: {fileID: 1425814087}
   - component: {fileID: 1425814089}
+  - component: {fileID: 1425814090}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -398,3 +399,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 435657515}
   bullet: {fileID: 5124593270081174770, guid: c1a998d59ce7d6e499cbb6b499627e93, type: 3}
+  startLerpingDistance: 2
+  maximum_dist: 2
+  speed: 20
+--- !u!50 &1425814090
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425814086}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

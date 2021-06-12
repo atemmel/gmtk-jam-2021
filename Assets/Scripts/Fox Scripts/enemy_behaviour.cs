@@ -8,13 +8,18 @@ public class enemy_behaviour : MonoBehaviour
     public GameObject player;
     public GameObject bullet;
     Vector3 enemy_velocity;
+    Vector3 acc;
+    public float startLerpingDistance;
 
+    public int maximum_dist;
+    readonly int minimum_dist = 4;
+    public float speed;
     float timer = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        enemy_velocity = getPositionDiff() / 4;
+        enemy_velocity = getPositionDiff().normalized*speed;
         timer = Time.realtimeSinceStartup;
     }
 
@@ -23,7 +28,18 @@ public class enemy_behaviour : MonoBehaviour
     {
         Vector3 pos_diff = getPositionDiff();
 
-        GetComponent<Rigidbody2D>().velocity = enemy_velocity + pos_diff.normalized;
+        //Bestämmer vilken hastighet objektet har just nu
+        var targetPosition = (transform.position - player.transform.position).normalized * maximum_dist;
+        var positionDelta = targetPosition - transform.position;
+
+        /*if (positionDelta.magnitude < startLerpingDistance)
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector3.Lerp(positionDelta.normalized, positionDelta.normalized * speed, positionDelta.magnitude / startLerpingDistance);
+        }
+        else*/
+        {
+            GetComponent<Rigidbody2D>().velocity = positionDelta.normalized * speed;
+        }
 
         //Kulor som skickas
         if (Time.realtimeSinceStartup - timer > 2)
