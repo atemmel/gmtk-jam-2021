@@ -4,48 +4,31 @@ using UnityEngine;
 
 public class FollowCrosshair : MonoBehaviour
 {
-    public GameObject cursorToTrack;
-    public float trackingVelocity;
-    public float stopTrackingDistance;
+    public Transform targetTransform;
+    public float trackingSpeed;
     public float startLerpingDistance;
 
-    //const float lerpTime = 100.7f;
-    //const float lerpTime = 0.5f;
-    const float lerpTime = 0.7f;
-    float storedTime = 0.0f;
+    Rigidbody2D ourRigidbody2D;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        ourRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        var target = new Vector2(cursorToTrack.transform.position.x, cursorToTrack.transform.position.y);
-        var me = new Vector2(transform.position.x, transform.position.y);
+        var positionDelta = targetTransform.position - transform.position;
+        var newVelocity = positionDelta.normalized * trackingSpeed;
 
-        var dist = Vector2.Distance(target, me);
-        if (dist <= stopTrackingDistance)
+        if (positionDelta.magnitude < startLerpingDistance)
         {
-            storedTime = 0.0f;
-            return; // aight, imma head out
-        }
-
-        var delta = target - me;
-        var m = delta.normalized * trackingVelocity * Time.deltaTime;
-
-        if (dist < startLerpingDistance)
-        {
-            storedTime += Time.deltaTime;
-            var lerped = Vector2.Lerp(me + m, me, storedTime / lerpTime);
-            transform.position = new Vector3(lerped.x, lerped.y, transform.position.z);
+            ourRigidbody2D.velocity = Vector2.Lerp(Vector2.zero, newVelocity, positionDelta.magnitude / startLerpingDistance);
         }
         else
         {
-            storedTime = 0.0f;
-            transform.position = transform.position + new Vector3(m.x, m.y, 0.0f);
+            ourRigidbody2D.velocity = newVelocity;
         }
     }
 }

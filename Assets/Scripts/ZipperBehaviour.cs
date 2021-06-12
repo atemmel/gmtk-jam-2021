@@ -27,7 +27,9 @@ public class ZipperBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        _rigidbody.MovePosition(_rigidbody.position + new Vector2(0.0f, velocity));
+		//_rigidbody.MovePosition(_rigidbody.position + new Vector2(0.0f, velocity));
+
+		_rigidbody.velocity = Vector2.down * 5;
 
 		if(_renderer.isVisible && storedTime < EnterTime) {
 			storedTime += Time.deltaTime;
