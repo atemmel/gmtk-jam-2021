@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class enemy_behaviour : MonoBehaviour
 {
-    public List<GameObject> player_objects;
+    GameObject[] player_objects;
     public GameObject bullet;
     public float startLerpingDistance;
     public float rot_speed;
+    public float bull_speed;
 
     float check_mag;
     float new_mag;
@@ -24,8 +25,10 @@ public class enemy_behaviour : MonoBehaviour
     {
         //enemy_velocity = getPositionDiff().normalized*speed;
         timer = Time.realtimeSinceStartup;
+        player_objects = new GameObject[] { GameObject.FindGameObjectWithTag("ship_left"), GameObject.FindGameObjectWithTag("ship_right"), GameObject.FindGameObjectWithTag("cargo")};
         check_mag = getPositionDiff(player_objects[0]).magnitude;
         rot_timer = Time.realtimeSinceStartup;
+
     }
 
     // Update is called once per frame
@@ -44,7 +47,7 @@ public class enemy_behaviour : MonoBehaviour
 
     void closeObjectLogic()
     {
-        for (int i = 0; i < player_objects.Count; i++)
+        for (int i = 0; i < player_objects.Length; i++)
         {
             new_mag = getPositionDiff(player_objects[i]).magnitude;
             if (new_mag < check_mag)
@@ -95,7 +98,7 @@ public class enemy_behaviour : MonoBehaviour
         if (Time.realtimeSinceStartup - timer > 2)
         {
             var bull = Instantiate(bullet, transform.position, transform.rotation);
-            var velocity = getPositionDiff(player_objects[closest_object]).normalized;
+            var velocity = getPositionDiff(player_objects[closest_object]).normalized * bull_speed;
             bull.GetComponent<Rigidbody2D>().velocity = velocity;
             timer = Time.realtimeSinceStartup;
         }

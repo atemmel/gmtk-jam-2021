@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7152022650623522356}
   - component: {fileID: 4029517599681795442}
   - component: {fileID: 4029517599681795443}
+  - component: {fileID: -7438899109404603299}
   m_Layer: 0
   m_Name: ZiggZaggieEnemy
   m_TagString: Untagged
@@ -147,3 +148,16 @@ MonoBehaviour:
   bullet: {fileID: 9149039526150800584, guid: 4b0b767876938374d802b9e51422a534, type: 3}
   downSpeed: 1
   sideSpeed: 6
+--- !u!114 &-7438899109404603299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029517599681795452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c643377b4857fb4798fc718b5ff4396, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 2
