@@ -10,7 +10,8 @@ public class FollowCursor : MonoBehaviour
 	public float startLerpingDistance;
 
 	//const float lerpTime = 100.7f;
-	const float lerpTime = 0.5f;
+	//const float lerpTime = 0.5f;
+	const float lerpTime = 0.7f;
 	float storedTime = 0.0f;
 
     // Start is called before the first frame update

@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MoveBackgroundBehaviour : MonoBehaviour
 {
-	static float YVelocity = -0.004f;
+	//static float YVelocity = -0.004f;
+	static float YVelocity = -0.04f;
 
 	Renderer _renderer;
 	Vector3 offsetVec = new Vector3(0, YVelocity, 0);
