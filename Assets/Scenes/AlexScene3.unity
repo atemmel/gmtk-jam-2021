@@ -201,10 +201,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6b34c75af1483409243b46e494498a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorToTrack: {fileID: 2053274615}
-  trackingVelocity: 20
+  targetTransform: {fileID: 2053274616}
+  trackingSpeed: 18
   stopTrackingDistance: 0.1
-  startLerpingDistance: 0.7
+  startLerpingDistance: 2
+--- !u!50 &621044418
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621044416}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!114 &621044420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,21 +240,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkToYank: {fileID: 2057084686}
   keyToPress: Fire2
---- !u!114 &621044421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 621044416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
 --- !u!4 &649202182 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8799174492655505117, guid: 27b8d3a2f8c92dd48ab7adcdf7b4f367, type: 3}
@@ -339,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c3b08e9806a4cb41bfa1983b06d555e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  speed: 20
 --- !u!1001 &979789483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -970,10 +976,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf6b34c75af1483409243b46e494498a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cursorToTrack: {fileID: 823362500}
-  trackingVelocity: 20
+  targetTransform: {fileID: 823362501}
+  trackingSpeed: 18
   stopTrackingDistance: 0.1
-  startLerpingDistance: 0.7
+  startLerpingDistance: 2
 --- !u!114 &2092273174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,6 +994,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkToYank: {fileID: 762278734}
   keyToPress: Fire1
+--- !u!50 &2092273175
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092273172}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &3116184519067263235
 PrefabInstance:
   m_ObjectHideFlags: 0
