@@ -8,6 +8,7 @@ public class enemy_behaviour : MonoBehaviour
     public GameObject bullet;
     public float startLerpingDistance;
     public float rot_speed;
+    public float bull_speed;
 
     float check_mag;
     float new_mag;
@@ -97,7 +98,7 @@ public class enemy_behaviour : MonoBehaviour
         if (Time.realtimeSinceStartup - timer > 2)
         {
             var bull = Instantiate(bullet, transform.position, transform.rotation);
-            var velocity = getPositionDiff(player_objects[closest_object]).normalized;
+            var velocity = getPositionDiff(player_objects[closest_object]).normalized * bull_speed;
             bull.GetComponent<Rigidbody2D>().velocity = velocity;
             timer = Time.realtimeSinceStartup;
         }
