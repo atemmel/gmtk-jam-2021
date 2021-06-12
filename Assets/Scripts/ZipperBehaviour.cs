@@ -22,7 +22,7 @@ public class ZipperBehaviour : MonoBehaviour
     {
         _renderer = GetComponent<Renderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        _rigidbody.AddForce(Vector2.down * 50);
+        //_rigidbody.AddForce(Vector2.down * 50);
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class ZipperBehaviour : MonoBehaviour
     {
         //_rigidbody.MovePosition(_rigidbody.position + new Vector2(0.0f, velocity));
 
-        //_rigidbody.velocity = Vector2.down * 5;
+        _rigidbody.velocity = Vector2.down * 5;
 
         if (_renderer.isVisible && storedTime < EnterTime)
         {
@@ -63,7 +63,7 @@ public class ZipperBehaviour : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log(collision.gameObject.layer);
-        if (collision.gameObject.layer == 6)
+        if (collision.gameObject.layer == 6) //playerBullet layer
         {
             Destroy(gameObject);
         }
