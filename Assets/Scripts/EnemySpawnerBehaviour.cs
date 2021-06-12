@@ -6,11 +6,8 @@ public class EnemySpawnerBehaviour : MonoBehaviour
 {
     public GameObject[] enemies;
     public float spawnInterval;
-<<<<<<< Updated upstream
     //public GameObject enemy;
     public bool randomRotation;
-=======
->>>>>>> Stashed changes
 
     float collectedTime = 0.0f;
 
@@ -36,16 +33,12 @@ public class EnemySpawnerBehaviour : MonoBehaviour
 
             var vec = new Vector3(x, transform.position.y, transform.position.z);
 
-<<<<<<< Updated upstream
             //Instantiate(enemies[Random.Range(0, enemies.Length)], vec, Quaternion.identity);
 
             //Instantiate(enemy, vec, Quaternion.identity);
             int rand = Random.Range(0, enemies.Length);
             Debug.Log("rand: " + rand);
             Instantiate(enemies[rand], vec, randomRotation ? Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward) : Quaternion.identity);
-=======
-            Instantiate(enemies[Random.Range(0, enemies.Length)], vec, Quaternion.identity);
->>>>>>> Stashed changes
             collectedTime = 0.0f;
         }
     }

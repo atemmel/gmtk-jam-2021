@@ -23,11 +23,7 @@ public class ZiggZaggyEnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
         if (transform.position.x > 18 || transform.position.x < -18)
-=======
-        if (transform.position.x > 10 || transform.position.x < -10)
->>>>>>> Stashed changes
         {
             sideSpeed *= -1;
         }
