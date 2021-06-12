@@ -13,10 +13,11 @@ public class RightCursor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		//Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
-		//Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
-		//transform.position = new Vector3(worldPosition.x, worldPosition.y, transform.position.z);
+		Vector2 screenPosition = new Vector2(Input.mousePosition.x, Input.mousePosition.y);
+		Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
+		transform.position = new Vector3(worldPosition.x, worldPosition.y, transform.position.z);
 
+		/*
 		if (Input.GetKey(KeyCode.UpArrow)) {  
 			transform.position = transform.position + new Vector3(0.0f, 1.0f, 0.0f) * 0.02f;
 		}  
@@ -32,5 +33,6 @@ public class RightCursor : MonoBehaviour
 		if (Input.GetKey(KeyCode.RightArrow)) {  
 			transform.position = transform.position + new Vector3(1.0f, 0.0f, 0.0f) * 0.02f;
 		}  
+		*/
 	}
 }

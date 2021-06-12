@@ -9,7 +9,7 @@ public class EnemySpawnerBehaviour : MonoBehaviour
 
 	float collectedTime = 0.0f;
 
-	const float spawnOffsetX = 1.0f;
+	const float spawnOffsetX = 2.0f;
 
     // Start is called before the first frame update
     void Start()
