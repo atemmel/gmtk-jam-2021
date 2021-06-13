@@ -6,6 +6,7 @@ public class ScoreAdder : MonoBehaviour
 {
 
     public int value;
+    public int multiplier;
 
     public void destruction_sequence()
     {
