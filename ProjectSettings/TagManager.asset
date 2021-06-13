@@ -3,7 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: [ship_left]
+  tags: [ship_left, cargo, ship_right, HurtsPlayerToTouch]
   layers:
   - Default
   - TransparentFX
@@ -13,6 +13,7 @@ TagManager:
   - UI
   - playerBullet
   - player
+  - enemyBullet
   - EnemyBullet
   - asteroid
   - 

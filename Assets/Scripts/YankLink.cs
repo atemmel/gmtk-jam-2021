@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class YankLink : MonoBehaviour
 {
+	public AudioSource yankSound;
 	public GameObject linkToYank;
+	public CargoScript cargo;
 	public string keyToPress;
 	
 	const float yankMag = 20.0f;
@@ -26,11 +28,15 @@ public class YankLink : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+		if(!cargo.IsAlive()) {
+			return;
+		}
 		if (Input.GetButtonDown(keyToPress)) {
 			var delta = originBody.position - body2ToYank.position;
 			offset = delta * yankMag;
 			bodyToYank.MovePosition(bodyToYank.position + offset);
 			body2ToYank.MovePosition(body2ToYank.position + offset);
+			yankSound.Play();
 		}
     }
 }

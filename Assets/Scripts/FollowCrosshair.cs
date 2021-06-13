@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class FollowCrosshair : MonoBehaviour
 {
+	public CargoScript cargo;
     public Transform targetTransform;
     public float trackingSpeed;
     public float startLerpingDistance;
     public GameObject bulletPrefab;
 
     Rigidbody2D ourRigidbody2D;
+	AudioSource _audioSource;
+
+
+	const float timeBetweenShots = 0.3f;
+	float collectedTime = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +23,7 @@ public class FollowCrosshair : MonoBehaviour
         ourRigidbody2D = GetComponent<Rigidbody2D>();
         if (targetTransform.name == "MouseCrosshair")
         {
+			_audioSource = GetComponent<AudioSource>();
             References.MouseShip = gameObject;
         }
         else if (targetTransform.name == "WasdCrosshair")
@@ -28,7 +35,18 @@ public class FollowCrosshair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var positionDelta = targetTransform.position - transform.position;
+
+		Vector3 positionDelta;
+		if(!cargo.IsAlive()) {
+			if(targetTransform.name == "MouseCrosshair") {
+				positionDelta = Camera.main.ViewportToScreenPoint(new Vector3(1.1f, 1.1f, 0.0f)) - transform.position;
+			} else {
+				positionDelta = Camera.main.ViewportToScreenPoint(new Vector3(-1.1f, 1.1f, 0.0f)) - transform.position;
+			}
+		} else {
+			positionDelta = targetTransform.position - transform.position;
+		}
+
         var newVelocity = positionDelta.normalized * trackingSpeed;
 
         if (positionDelta.magnitude < startLerpingDistance)
@@ -40,10 +58,20 @@ public class FollowCrosshair : MonoBehaviour
             ourRigidbody2D.velocity = newVelocity;
         }
 
-        if (Input.GetMouseButtonDown(1))
-        {
+		collectedTime += Time.deltaTime;
+
+		if(!cargo.IsAlive()) {
+			return;
+		}
+
+
+		if (Input.GetButton("Fire3") && collectedTime >= timeBetweenShots) {
+			collectedTime = 0.0f;
             var bullet = Instantiate(bulletPrefab);
             bullet.transform.position = transform.position;
+			if(_audioSource != null) {
+				_audioSource.Play();
+			}
         }
     }
 }

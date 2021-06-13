@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class collision_logic : MonoBehaviour
 {
+	public GameObject explosionVfx;
     public int hp;
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.layer);
         if (collision.gameObject.layer == 6) //playerBullet layer
         {
             hp -= 1;
@@ -29,10 +27,10 @@ public class collision_logic : MonoBehaviour
             hp -= 3;
         }
 
-        if (hp <= 0)
+        if (hp <= 0) {
+			var effect = Instantiate(explosionVfx, transform.position, Quaternion.identity);
+			Destroy(effect, 0.5f);
             Destroy(gameObject);
-
-        if (GetComponent<Rigidbody2D>().velocity.magnitude > 10)
-            Debug.Log(GetComponent<Rigidbody2D>().velocity.magnitude);
+		}
     }
 }

@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -1287169583716663712}
   m_Layer: 9
   m_Name: ZipperEnemy
-  m_TagString: Untagged
+  m_TagString: HurtsPlayerToTouch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -178,4 +178,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c643377b4857fb4798fc718b5ff4396, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionVfx: {fileID: 1298655714167679504, guid: 0c8e0a4a2627f154a936ecf13d5bf973,
+    type: 3}
   hp: 1

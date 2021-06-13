@@ -86,10 +86,8 @@ public class enemy_behaviour : MonoBehaviour
             last_activation[0] = 0;
             last_activation[1] = 1;
         }
-        Debug.Log(rotation_dir);
-        Debug.Log(transform.rotation.eulerAngles.z);
 
-            transform.RotateAround(player_objects[closest_object].transform.position, Vector3.forward, rotation_dir * rot_speed * Time.deltaTime);
+		transform.RotateAround(player_objects[closest_object].transform.position, Vector3.forward, rotation_dir * rot_speed * Time.deltaTime);
         
     }
 
