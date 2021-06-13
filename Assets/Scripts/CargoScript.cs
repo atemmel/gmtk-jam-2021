@@ -15,29 +15,47 @@ public class CargoScript : MonoBehaviour
 
 	GameObject hitVfx;
 
-    // Start is called before the first frame update
-    void Start()
+	public float invincibilityframes;
+	float last_hit;
+	Animator sprite;
+
+	// Start is called before the first frame update
+	void Start()
     {
-        References.Cargo = gameObject;
+		last_hit = invincibilityframes;
+		References.Cargo = gameObject;
 		currentHealth = maxHealth;
 		healthbar.SetMaxHealth(maxHealth);
 		hurtSound = GetComponents<AudioSource>()[0];
 		destroySound = GetComponents<AudioSource>()[1];
 		_rigidbody = GetComponent<Rigidbody2D>();
-    }
+		sprite = GetComponentInChildren<Animator>();
+	}
 
     // Update is called once per frame
     void Update()
     {
-
-    }
+		last_hit += Time.deltaTime;
+		if (last_hit >= invincibilityframes)
+        {
+			sprite.Rebind();
+			sprite.Update(0.0f);
+			sprite.enabled = false;
+		}
+	}
 
      private void OnCollisionEnter2D(Collision2D collision)
      {
-		 if (collision.collider.gameObject.CompareTag("HurtsPlayerToTouch")) {
-			Hurt(1);
-			_rigidbody.AddForce(collision.relativeVelocity * 1000.0f);
-		 } 
+		if (last_hit >= invincibilityframes)
+		{
+			if (collision.collider.gameObject.CompareTag("HurtsPlayerToTouch"))
+			{
+				Hurt(1);
+				_rigidbody.AddForce(collision.relativeVelocity * 1000.0f);
+				last_hit = 0;
+				sprite.enabled = true;
+			}
+		}
      }
 
 	void Hurt(int damage) {

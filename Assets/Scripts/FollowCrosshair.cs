@@ -17,9 +17,16 @@ public class FollowCrosshair : MonoBehaviour
 	const float timeBetweenShots = 0.3f;
 	float collectedTime = 0.0f;
 
-    // Start is called before the first frame update
-    void Start()
+	public float noShootyFrames;
+	float last_hit;
+	SpriteRenderer sprite;
+
+	// Start is called before the first frame update
+	void Start()
     {
+		last_hit = noShootyFrames;
+		sprite = GetComponent<SpriteRenderer>();
+
         ourRigidbody2D = GetComponent<Rigidbody2D>();
         if (targetTransform.name == "MouseCrosshair")
         {
@@ -35,7 +42,6 @@ public class FollowCrosshair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
 		Vector3 positionDelta;
 		if(!cargo.IsAlive()) {
 			if(targetTransform.name == "MouseCrosshair") {
@@ -64,14 +70,36 @@ public class FollowCrosshair : MonoBehaviour
 			return;
 		}
 
-
-		if (Input.GetButton("Fire3") && collectedTime >= timeBetweenShots) {
-			collectedTime = 0.0f;
-            var bullet = Instantiate(bulletPrefab);
-            bullet.transform.position = transform.position;
-			if(_audioSource != null) {
-				_audioSource.Play();
+		last_hit += Time.deltaTime;
+		if (last_hit >= noShootyFrames)
+		{
+			sprite.color = new Color(1, 1, 1);
+			if (Input.GetButton("Fire3") && collectedTime >= timeBetweenShots)
+			{
+				collectedTime = 0.0f;
+				var bullet = Instantiate(bulletPrefab);
+				bullet.transform.position = transform.position;
+				if (_audioSource != null)
+				{
+					_audioSource.Play();
+				}
 			}
-        }
-    }
+		}
+	}
+
+	private void OnCollisionEnter2D(Collision2D collision)
+	{
+		if (last_hit >= noShootyFrames)
+		{
+			if (collision.collider.gameObject.CompareTag("HurtsPlayerToTouch"))
+			{
+				sprite.color = new Color(0.3f, 0.3f, 0.3f);
+				Debug.Log(sprite.color);
+				last_hit = 0;
+			}
+		}
+	}
 }
+
+
+
