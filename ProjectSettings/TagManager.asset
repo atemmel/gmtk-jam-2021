@@ -8,6 +8,7 @@ TagManager:
   - cargo
   - ship_right
   - HurtsPlayerToTouch
+  - ScoreAdder
   layers:
   - Default
   - TransparentFX
