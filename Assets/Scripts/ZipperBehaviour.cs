@@ -22,7 +22,7 @@ public class ZipperBehaviour : MonoBehaviour
     {
         _renderer = GetComponentInChildren<Renderer>();
         _rigidbody = GetComponent<Rigidbody2D>();
-		_rigidbody.AddRelativeForce(Vector2.down * 500);
+		_rigidbody.AddForce(Vector2.down * 500);
     }
 
     // Update is called once per frame
