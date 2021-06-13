@@ -65,29 +65,33 @@ public class enemy_behaviour : MonoBehaviour
         var positionDelta = targetPosition - transform.position;
         var newVelocity = positionDelta.normalized * speed;
 
-        if (positionDelta.magnitude < startLerpingDistance)
-        {
-            GetComponent<Rigidbody2D>().velocity = Vector3.Lerp(Vector3.zero, newVelocity, positionDelta.magnitude / startLerpingDistance);
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().velocity = newVelocity/10;
-        }
-
-        if (transform.rotation.eulerAngles.z > 80 && transform.rotation.eulerAngles.z < 90 && last_activation[0] == 0)
+        if (transform.rotation.eulerAngles.z > 80 && transform.rotation.eulerAngles.z < 180 && last_activation[0] == 0)
         {
             rotation_dir *= -1;
             last_activation[0] = 1;
             last_activation[1] = 0;
         }
-        else if (transform.rotation.eulerAngles.z < 280 && transform.rotation.eulerAngles.z > 270 && last_activation[1] == 0)
+        else if (transform.rotation.eulerAngles.z < 280 && transform.rotation.eulerAngles.z > 180 && last_activation[1] == 0)
         {
             rotation_dir *= -1;
             last_activation[0] = 0;
             last_activation[1] = 1;
         }
 
-		transform.RotateAround(player_objects[closest_object].transform.position, Vector3.forward, rotation_dir * rot_speed * Time.deltaTime);
+        if (positionDelta.magnitude < startLerpingDistance)
+        {
+            GetComponent<Rigidbody2D>().velocity = Vector3.Lerp(Vector3.zero, newVelocity, positionDelta.magnitude / startLerpingDistance);
+            transform.RotateAround(player_objects[closest_object].transform.position, Vector3.forward, rotation_dir * rot_speed * Time.deltaTime);
+        }
+        else
+        {
+            GetComponent<Rigidbody2D>().velocity = newVelocity/10;
+        }
+
+        if (transform.position.y < player_objects[closest_object].transform.position.y)
+        {
+            GetComponent<Rigidbody2D>().velocity = player_objects[closest_object].GetComponent<Rigidbody2D>().velocity;
+        }
         
     }
 
@@ -95,7 +99,7 @@ public class enemy_behaviour : MonoBehaviour
     {
         if (Time.realtimeSinceStartup - timer > 2)
         {
-            var bull = Instantiate(bullet, transform.position, transform.rotation);
+            var bull = Instantiate(bullet, transform.position + getPositionDiff(player_objects[closest_object]).normalized*transform.localScale.magnitude/2, transform.rotation);
             var velocity = getPositionDiff(player_objects[closest_object]).normalized * bull_speed;
             bull.GetComponent<Rigidbody2D>().velocity = velocity;
             timer = Time.realtimeSinceStartup;

@@ -10,6 +10,7 @@ public class collision_logic : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
     }
 
     // Update is called once per frame
@@ -29,7 +30,7 @@ public class collision_logic : MonoBehaviour
 
         if (hp <= 0) {
 			var effect = Instantiate(explosionVfx, transform.position, Quaternion.identity);
-			Destroy(effect, 0.5f);
+            Destroy(effect, 0.5f);
             Destroy(gameObject);
 		}
     }
