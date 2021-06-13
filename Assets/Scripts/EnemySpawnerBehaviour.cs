@@ -32,14 +32,15 @@ public class EnemySpawnerBehaviour : MonoBehaviour
         collectedTime += Time.deltaTime;
         if (collectedTime > chosenSpawnInterval)
         {
-            float x = Random.Range(Camera.main.ScreenToWorldPoint(new Vector2(spawnOffsetX, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width - spawnOffsetX, 0)).x);
+      
+                float x = Random.Range(Camera.main.ScreenToWorldPoint(new Vector2(spawnOffsetX, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width - spawnOffsetX, 0)).x);
 
-            var vec = new Vector3(x, transform.position.y, transform.position.z);
-            int rand = Random.Range(0, enemies.Length);
-            Instantiate(enemies[rand], vec, randomRotation ? Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward) : Quaternion.identity);
-            collectedTime = 0.0f;
+                var vec = new Vector3(x, transform.position.y, transform.position.z);
+                int rand = Random.Range(0, enemies.Length);
+                Instantiate(enemies[rand], vec, randomRotation ? Quaternion.AngleAxis(Random.Range(0.0f, 360.0f), Vector3.forward) : Quaternion.identity);
+                collectedTime = 0.0f;
 
-			chosenSpawnInterval = Random.Range(lowerSpawnInterval, upperSpawnInterval);
+                chosenSpawnInterval = Random.Range(lowerSpawnInterval, upperSpawnInterval);
         }
     }
 }

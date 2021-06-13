@@ -15,7 +15,6 @@ public class enemy_behaviour : MonoBehaviour
     int closest_object;
     public int maximum_dist;
     public float speed;
-    float timer = 0;
     int rotation_dir = -1;
     int[] last_activation = { 0, 0 };
 

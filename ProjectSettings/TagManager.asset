@@ -9,6 +9,9 @@ TagManager:
   - ship_right
   - HurtsPlayerToTouch
   - ScoreAdder
+  - Zigzagspawn
+  - ShootySpawn
+  - zipperspawn
   layers:
   - Default
   - TransparentFX

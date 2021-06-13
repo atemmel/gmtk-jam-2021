@@ -68,9 +68,10 @@ public class bossBehaviour : MonoBehaviour
         else
         {
             _rigidbody2D.velocity = Vector2.down * downSpeed;
-            if (transform.position.y < (upper_bound - GetComponent<CapsuleCollider2D>().size.y / 2))
+            if (transform.position.y < (upper_bound - GetComponent<CapsuleCollider2D>().size.y))
             {
                 entered = true;
+                GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Angery_shoot");
                 dir = Vector2.right;
                 GetComponent<Collider2D>().enabled = true;
             }
