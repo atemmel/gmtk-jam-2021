@@ -5,11 +5,10 @@ using UnityEngine;
 public class PausMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static bool GamePaused = false;
+    public bool GamePaused = false;
     public GameObject pauseMenuUI;
     private void Start()
     {
-        Resume();
         
     }
     // Update is called once per frame
