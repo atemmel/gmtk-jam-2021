@@ -11,12 +11,15 @@ public class ZiggZaggyEnemyBehaviour : MonoBehaviour
     public float sideSpeed;
     float timer = 0;
 
+	AudioSource shootSound;
+
     // Start is called before the first frame update
     void Start()
     {
         timer = Time.realtimeSinceStartup;
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.velocity = new Vector2(sideSpeed, -downSpeed);
+		shootSound = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
