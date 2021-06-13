@@ -19,7 +19,7 @@ public class MoveBackgroundBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!_renderer.isVisible && transform.position.y <= 0.0f)
+        if (!_renderer.isVisible && transform.position.y <= -_renderer.bounds.size.y / 2.0f)
         {
             transform.position = transform.position + new Vector3(0, _renderer.bounds.size.y * 2.96f, 0);
         }

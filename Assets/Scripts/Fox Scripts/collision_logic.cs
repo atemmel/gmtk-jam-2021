@@ -19,7 +19,6 @@ public class collision_logic : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.layer);
         if (collision.gameObject.layer == 6) //playerBullet layer
         {
             hp -= 1;
@@ -31,8 +30,5 @@ public class collision_logic : MonoBehaviour
 
         if (hp <= 0)
             Destroy(gameObject);
-
-        if (GetComponent<Rigidbody2D>().velocity.magnitude > 10)
-            Debug.Log(GetComponent<Rigidbody2D>().velocity.magnitude);
     }
 }
