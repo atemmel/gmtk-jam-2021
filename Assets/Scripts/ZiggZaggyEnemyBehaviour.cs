@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ZiggZaggyEnemyBehaviour : MonoBehaviour
 {
-
     Rigidbody2D _rigidbody2D;
     public GameObject bullet;
 

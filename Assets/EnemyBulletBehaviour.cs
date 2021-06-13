@@ -2,17 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bulletBehaviour : MonoBehaviour
+public class EnemyBulletBehaviour : MonoBehaviour
 {
-	public float bulletVelocity;
-    Rigidbody2D _rigidbody2D;
-
+	public string[] collidableTags;
 	Renderer _renderer;
     // Start is called before the first frame update
     void Start()
     {
-        _rigidbody2D = GetComponent<Rigidbody2D>();
-        _rigidbody2D.velocity = Vector2.up * bulletVelocity;
 		_renderer = GetComponent<Renderer>();
     }
 
@@ -26,6 +22,11 @@ public class bulletBehaviour : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+		foreach(var tag in collidableTags) {
+			if(collision.gameObject.tag == tag) {
+				Destroy(gameObject);
+				break;
+			}
+		}
     }
 }
