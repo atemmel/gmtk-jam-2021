@@ -10,6 +10,11 @@ public class FollowCrosshair : MonoBehaviour
     public GameObject bulletPrefab;
 
     Rigidbody2D ourRigidbody2D;
+	AudioSource _audioSource;
+
+
+	const float timeBetweenShots = 0.3f;
+	float collectedTime = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +22,7 @@ public class FollowCrosshair : MonoBehaviour
         ourRigidbody2D = GetComponent<Rigidbody2D>();
         if (targetTransform.name == "MouseCrosshair")
         {
+			_audioSource = GetComponent<AudioSource>();
             References.MouseShip = gameObject;
         }
         else if (targetTransform.name == "WasdCrosshair")
@@ -40,10 +46,16 @@ public class FollowCrosshair : MonoBehaviour
             ourRigidbody2D.velocity = newVelocity;
         }
 
-        if (Input.GetMouseButtonDown(1))
-        {
+		collectedTime += Time.deltaTime;
+
+
+		if (Input.GetButton("Fire3") && collectedTime >= timeBetweenShots) {
+			collectedTime = 0.0f;
             var bullet = Instantiate(bulletPrefab);
             bullet.transform.position = transform.position;
+			if(_audioSource != null) {
+				_audioSource.Play();
+			}
         }
     }
 }
