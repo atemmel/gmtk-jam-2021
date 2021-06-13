@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bulletBehaviour : MonoBehaviour
 {
+	public GameObject explosionVfx;
 	public float bulletVelocity;
     Rigidbody2D _rigidbody2D;
 
@@ -27,5 +28,7 @@ public class bulletBehaviour : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
+		var effect = Instantiate(explosionVfx, transform.position, Quaternion.identity);
+		Destroy(effect, 0.5f);
     }
 }

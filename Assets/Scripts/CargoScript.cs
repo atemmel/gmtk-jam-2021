@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class CargoScript : MonoBehaviour
 {
+	public GameObject explosionVfx;
 	public int maxHealth;
 	int currentHealth;
 
 	public Healthbar healthbar;
 	AudioSource hurtSound, destroySound;
 	Rigidbody2D _rigidbody;
+
+	GameObject hitVfx;
 
     // Start is called before the first frame update
     void Start()
@@ -48,5 +51,16 @@ public class CargoScript : MonoBehaviour
 
 	void Die() {
 		destroySound.Play();
+		for(float f = 0.0f; f < 2.0f; f += 0.1f) {
+			Invoke("RandomBoom", f);
+		}
+	}
+
+	void RandomBoom() {
+		float alpha = Random.Range(0.0f, 2.0f * Mathf.PI);
+		float mag = Random.Range(1.0f, 1.5f);
+		var vec2 = new Vector2(Mathf.Cos(alpha), Mathf.Sin(alpha)) * mag;
+		var effect = Instantiate(explosionVfx, transform.position + new Vector3(vec2.x, vec2.y, 0.0f), Quaternion.identity);
+		Destroy(effect, 0.5f);
 	}
 }

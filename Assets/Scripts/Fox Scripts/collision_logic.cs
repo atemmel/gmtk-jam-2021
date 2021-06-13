@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class collision_logic : MonoBehaviour
 {
+	public GameObject explosionVfx;
     public int hp;
 
     // Start is called before the first frame update
@@ -26,7 +27,10 @@ public class collision_logic : MonoBehaviour
             hp -= 3;
         }
 
-        if (hp <= 0)
+        if (hp <= 0) {
+			var effect = Instantiate(explosionVfx, transform.position, Quaternion.identity);
+			Destroy(effect, 0.5f);
             Destroy(gameObject);
+		}
     }
 }

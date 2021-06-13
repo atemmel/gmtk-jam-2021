@@ -1541,6 +1541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff1a0cbeb06d43438cb66d9314eef22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosionVfx: {fileID: 1298655714167679504, guid: 0c8e0a4a2627f154a936ecf13d5bf973, type: 3}
   maxHealth: 5
   healthbar: {fileID: 236214622}
 --- !u!82 &1848334366
@@ -2048,6 +2049,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9043894402287241405, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d6a1f3db20e9fc4f8fdc32638a02ae2, type: 3}
     - target: {fileID: 9043894402287241406, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
       propertyPath: m_Name
       value: player_ship_left
@@ -2074,7 +2079,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a84d729b37d730d4493727f1663bd33f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2271,7 +2276,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a84d729b37d730d4493727f1663bd33f, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -2415,6 +2420,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3221426558135316383, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7d23beae213840e418f19de78f38adb4, type: 3}
     - target: {fileID: 7689194346110675568, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
       propertyPath: targetTransform
       value: 

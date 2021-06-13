@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyBulletBehaviour : MonoBehaviour
 {
+	public GameObject explosionVfx;
 	public string[] collidableTags;
 	Renderer _renderer;
     // Start is called before the first frame update
@@ -24,6 +25,8 @@ public class EnemyBulletBehaviour : MonoBehaviour
     {
 		foreach(var tag in collidableTags) {
 			if(collision.gameObject.tag == tag) {
+				var effect = Instantiate(explosionVfx, transform.position, Quaternion.identity);
+				Destroy(effect, 0.5f);
 				Destroy(gameObject);
 				break;
 			}
