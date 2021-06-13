@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4029517599681795442}
   - component: {fileID: 4029517599681795443}
   - component: {fileID: -7438899109404603299}
+  - component: {fileID: 955099471496553388}
   m_Layer: 0
   m_Name: ZiggZaggieEnemy
   m_TagString: HurtsPlayerToTouch
@@ -75,8 +76,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 7aace45246e28e447b038d7b38b1bec8, type: 3}
-  m_Color: {r: 0.039333783, g: 0.5283019, b: 0, a: 1}
+  m_Sprite: {fileID: 7127769706924348086, guid: f9d08aa2867fc7e4fb1516d93e6e52cc, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -103,7 +104,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.8, y: 1.8}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -148,6 +149,7 @@ MonoBehaviour:
   bullet: {fileID: 9149039526150800584, guid: 4b0b767876938374d802b9e51422a534, type: 3}
   downSpeed: 1
   sideSpeed: 6
+  shotTimer: 2
 --- !u!114 &-7438899109404603299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,3 +167,22 @@ MonoBehaviour:
   score_empty: {fileID: 6940460072473314745, guid: 5fe14901dda9b5b4c8648224479e2225, type: 3}
   hitScore: 10
   killScore: 100
+--- !u!95 &955099471496553388
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029517599681795452}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 49d68dc1d56f13b4c8f19d7638bd3f26, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
