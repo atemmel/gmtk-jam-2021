@@ -54,6 +54,7 @@ public class CargoScript : MonoBehaviour
 		for(float f = 0.0f; f < 2.0f; f += 0.1f) {
 			Invoke("RandomBoom", f);
 		}
+		Sayonara();
 	}
 
 	void RandomBoom() {
@@ -62,5 +63,22 @@ public class CargoScript : MonoBehaviour
 		var vec2 = new Vector2(Mathf.Cos(alpha), Mathf.Sin(alpha)) * mag;
 		var effect = Instantiate(explosionVfx, transform.position + new Vector3(vec2.x, vec2.y, 0.0f), Quaternion.identity);
 		Destroy(effect, 0.5f);
+	}
+
+	public bool IsAlive() {
+		return currentHealth > 0;
+	}
+
+	void Sayonara() {
+		// o7
+		CutTheRope(0);
+		CutTheRope(1);
+		_rigidbody.AddForce(Vector2.up * 10.0f);
+	}
+
+	void CutTheRope(int i) {
+		var link = gameObject.transform.GetChild(i);
+		var toDisconnect = link.gameObject.transform.GetChild(0);
+		Destroy(toDisconnect.gameObject); 
 	}
 }

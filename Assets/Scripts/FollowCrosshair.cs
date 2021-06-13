@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FollowCrosshair : MonoBehaviour
 {
+	public CargoScript cargo;
     public Transform targetTransform;
     public float trackingSpeed;
     public float startLerpingDistance;
@@ -34,7 +35,18 @@ public class FollowCrosshair : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var positionDelta = targetTransform.position - transform.position;
+
+		Vector3 positionDelta;
+		if(!cargo.IsAlive()) {
+			if(targetTransform.name == "MouseCrosshair") {
+				positionDelta = Camera.main.ViewportToScreenPoint(new Vector3(1.1f, 1.1f, 0.0f)) - transform.position;
+			} else {
+				positionDelta = Camera.main.ViewportToScreenPoint(new Vector3(-1.1f, 1.1f, 0.0f)) - transform.position;
+			}
+		} else {
+			positionDelta = targetTransform.position - transform.position;
+		}
+
         var newVelocity = positionDelta.normalized * trackingSpeed;
 
         if (positionDelta.magnitude < startLerpingDistance)
