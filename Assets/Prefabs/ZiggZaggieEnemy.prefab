@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4029517599681795442}
   - component: {fileID: 4029517599681795443}
   - component: {fileID: -7438899109404603299}
-  - component: {fileID: 2298593264398504616}
   m_Layer: 0
   m_Name: ZiggZaggieEnemy
   m_TagString: HurtsPlayerToTouch
@@ -163,17 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionVfx: {fileID: 1298655714167679504, guid: 0c8e0a4a2627f154a936ecf13d5bf973, type: 3}
   hp: 2
---- !u!114 &2298593264398504616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4029517599681795452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10adaf3cc0f562b4684f1ada79514f5e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   score_empty: {fileID: 6940460072473314745, guid: 5fe14901dda9b5b4c8648224479e2225, type: 3}
-  score: 100
+  hitScore: 10
+  killScore: 100
