@@ -23,6 +23,13 @@ public class CargoScript : MonoBehaviour
 
     }
 
+     private void OnCollisionEnter2D(Collision2D collision)
+     {
+		 if (collision.collider.gameObject.CompareTag("HurtsPlayerToTouch")) {
+			 Hurt(1);
+		 } 
+     }
+
 	void Hurt(int damage) {
 		currentHealth -= damage;
 		healthbar.SetHealth(currentHealth);
