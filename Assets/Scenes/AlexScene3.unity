@@ -2084,9 +2084,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4288290980129960453, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4288290980129960456, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4288290980129960457, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
       propertyPath: cargo
@@ -2108,6 +2112,10 @@ PrefabInstance:
       propertyPath: cargo
       value: 
       objectReference: {fileID: 1848334365}
+    - target: {fileID: 4288290980129960458, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
+      propertyPath: noShootyFrames
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4288290980129960458, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
       propertyPath: targetTransform
       value: 
@@ -2692,17 +2700,33 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 7d23beae213840e418f19de78f38adb4, type: 3}
+    - target: {fileID: 3221426558135316383, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221426558135316383, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3221426558135316383, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7689194346110675568, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
       propertyPath: cargo
       value: 
       objectReference: {fileID: 1848334365}
+    - target: {fileID: 7689194346110675568, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
+      propertyPath: noShootyFrames
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7689194346110675568, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
       propertyPath: targetTransform
       value: 
       objectReference: {fileID: 2053274616}
     - target: {fileID: 7689194346110675571, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
       propertyPath: m_BodyType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7689194346110675573, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
       propertyPath: cargo
@@ -2719,6 +2743,10 @@ PrefabInstance:
     - target: {fileID: 7689194346110675573, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
       propertyPath: timeBetweenYanks
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7689194346110675575, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
