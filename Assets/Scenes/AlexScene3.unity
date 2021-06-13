@@ -854,6 +854,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
+--- !u!1 &825776875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8548190627735850603, guid: 82157626aa2ae314790a1256bb74ae05, type: 3}
+  m_PrefabInstance: {fileID: 4015999113644963886}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &825776878
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825776875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15aad5f1d318e824e87fdc0a96a291a9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &889520619 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6921029431783324581, guid: efcdf7f9db2757c4ebc91e4c79d3ca25, type: 3}
@@ -1967,6 +1991,10 @@ PrefabInstance:
       propertyPath: retryButton
       value: 
       objectReference: {fileID: 889520619}
+    - target: {fileID: 4015999115157315635, guid: 82157626aa2ae314790a1256bb74ae05, type: 3}
+      propertyPath: invincibilityframes
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4015999115157315638, guid: 82157626aa2ae314790a1256bb74ae05, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -2023,6 +2051,26 @@ PrefabInstance:
       propertyPath: objectToTrack
       value: 
       objectReference: {fileID: 5044400914323240097}
+    - target: {fileID: 8548190627735850596, guid: 82157626aa2ae314790a1256bb74ae05, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6899331962008835426, guid: e1c749ae746cf3c49ad90bd479c03a79, type: 3}
+    - target: {fileID: 8548190627735850596, guid: 82157626aa2ae314790a1256bb74ae05, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548190627735850596, guid: 82157626aa2ae314790a1256bb74ae05, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548190627735850596, guid: 82157626aa2ae314790a1256bb74ae05, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548190627735850596, guid: 82157626aa2ae314790a1256bb74ae05, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82157626aa2ae314790a1256bb74ae05, type: 3}
 --- !u!1001 &4288290981546949663
