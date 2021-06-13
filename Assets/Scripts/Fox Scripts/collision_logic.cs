@@ -24,12 +24,7 @@ public class collision_logic : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == 6) //playerBullet layer
-        {
-            hp -= 1;
-            AddScore(hitScore);
-        }
-        else if (collision.relativeVelocity.magnitude > 20)
+        if (collision.relativeVelocity.magnitude > 20)
         {
             hp -= 3;
         }
@@ -51,6 +46,26 @@ public class collision_logic : MonoBehaviour
         {
             var add_score = Instantiate(score_empty, transform.position, Quaternion.identity);
             add_score.GetComponent<ScoreAdder>().value = score;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.layer == 6) //playerBullet layer
+        {
+            hp -= 1;
+            AddScore(hitScore);
+            Destroy(collision.gameObject);
+            var effect = Instantiate(explosionVfx, collision.transform.position, Quaternion.identity);
+            Destroy(effect, 0.5f);
+        }
+
+        if (hp <= 0)
+        {
+            var effect = Instantiate(explosionVfx, transform.position, Quaternion.identity);
+            AddScore(killScore);
+            Destroy(effect, 0.5f);
+            Destroy(gameObject);
         }
     }
 
