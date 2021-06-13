@@ -60,6 +60,10 @@ public class FollowCrosshair : MonoBehaviour
 
 		collectedTime += Time.deltaTime;
 
+		if(!cargo.IsAlive()) {
+			return;
+		}
+
 
 		if (Input.GetButton("Fire3") && collectedTime >= timeBetweenShots) {
 			collectedTime = 0.0f;

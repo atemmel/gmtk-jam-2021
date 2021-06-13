@@ -1627,6 +1627,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4288290980129960457, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
+      propertyPath: cargo
+      value: 
+      objectReference: {fileID: 1848334365}
+    - target: {fileID: 4288290980129960457, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
       propertyPath: yankSound
       value: 
       objectReference: {fileID: 5044400914323240104}
@@ -2073,6 +2077,10 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7689194346110675573, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
+      propertyPath: cargo
+      value: 
+      objectReference: {fileID: 1848334365}
     - target: {fileID: 7689194346110675573, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
       propertyPath: yankSound
       value: 
