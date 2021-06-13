@@ -25,7 +25,6 @@ public class mainMenu : MonoBehaviour
         Debug.Log("Quit");
         Application.Quit();
     }
-
     public void Setting(bool newValue)
     {
         
