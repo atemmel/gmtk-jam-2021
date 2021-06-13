@@ -25,10 +25,10 @@ public class bulletBehaviour : MonoBehaviour
 		}
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        Destroy(gameObject);
-		var effect = Instantiate(explosionVfx, transform.position, Quaternion.identity);
-		Destroy(effect, 0.5f);
-    }
+  //  private void OnCollisionEnter2D(Collision2D collision)
+  //  {
+  //      Destroy(gameObject);
+		//var effect = Instantiate(explosionVfx, transform.position, Quaternion.identity);
+		//Destroy(effect, 0.5f);
+  //  }
 }

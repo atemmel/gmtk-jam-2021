@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 694729719996007662}
   - component: {fileID: -5219662285373714629}
   - component: {fileID: -7112890972915466211}
+  - component: {fileID: -937851467057825437}
   m_Layer: 0
   m_Name: ShootyEnemy
-  m_TagString: Untagged
+  m_TagString: HurtsPlayerToTouch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: bc183009b34aeb84ea56d6b20dab006a, type: 2}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -75,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: -1638439808665577305, guid: 5d7cbdc13449ae748a40fecc58b829e6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,10 +101,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 9149039526150800584, guid: 4b0b767876938374d802b9e51422a534, type: 3}
   startLerpingDistance: 2
-  rot_speed: 20
+  rot_speed: 50
   bull_speed: 4
   maximum_dist: 5
-  speed: 20
+  speed: 40
+  shotTimer: 3
 --- !u!50 &694729719996007662
 Rigidbody2D:
   serializedVersion: 4
@@ -159,7 +161,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.2, y: 0.93333334}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -168,3 +170,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!95 &-937851467057825437
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694729719996007650}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: de7fb6f646fd36a47af0a265096a144b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

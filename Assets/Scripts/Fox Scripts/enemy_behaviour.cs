@@ -15,27 +15,25 @@ public class enemy_behaviour : MonoBehaviour
     int closest_object;
     public int maximum_dist;
     public float speed;
-    float rot_timer;
     float timer = 0;
     int rotation_dir = -1;
     int[] last_activation = { 0, 0 };
 
+    public float shotTimer;
+    float last_shot;
+
     // Start is called before the first frame update
     void Start()
     {
-        //enemy_velocity = getPositionDiff().normalized*speed;
-        timer = Time.realtimeSinceStartup;
+        last_shot = shotTimer;
         player_objects = new GameObject[] { GameObject.FindGameObjectWithTag("ship_left"), GameObject.FindGameObjectWithTag("ship_right"), GameObject.FindGameObjectWithTag("cargo")};
         check_mag = getPositionDiff(player_objects[0]).magnitude;
-        rot_timer = Time.realtimeSinceStartup;
-
     }
 
     // Update is called once per frame
     void Update()
     {
         closeObjectLogic();
-        //Vector3 pos_diff = getPositionDiff();
         Movement();
 
         //Look at player
@@ -97,12 +95,18 @@ public class enemy_behaviour : MonoBehaviour
 
     void ShootyShoot()
     {
-        if (Time.realtimeSinceStartup - timer > 2)
+        last_shot += Time.deltaTime;
+        if (last_shot > shotTimer)
         {
             var bull = Instantiate(bullet, transform.position + getPositionDiff(player_objects[closest_object]).normalized*transform.localScale.magnitude/2, transform.rotation);
             var velocity = getPositionDiff(player_objects[closest_object]).normalized * bull_speed;
             bull.GetComponent<Rigidbody2D>().velocity = velocity;
-            timer = Time.realtimeSinceStartup;
+            last_shot = 0;
+            GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Bugman_move");
+        }
+        if (shotTimer - last_shot < 0.5)
+        {
+            GetComponent<Animator>().runtimeAnimatorController = Resources.Load<RuntimeAnimatorController>("Animations/Bugman_shoot");
         }
     }
 
