@@ -9,6 +9,7 @@ public class CargoScript : MonoBehaviour
 
 	public Healthbar healthbar;
 	AudioSource hurtSound, destroySound;
+	Rigidbody2D _rigidbody;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +19,7 @@ public class CargoScript : MonoBehaviour
 		healthbar.SetMaxHealth(maxHealth);
 		hurtSound = GetComponents<AudioSource>()[0];
 		destroySound = GetComponents<AudioSource>()[1];
+		_rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -29,7 +31,8 @@ public class CargoScript : MonoBehaviour
      private void OnCollisionEnter2D(Collision2D collision)
      {
 		 if (collision.collider.gameObject.CompareTag("HurtsPlayerToTouch")) {
-			 Hurt(1);
+			Hurt(1);
+			_rigidbody.AddForce(collision.relativeVelocity * 1000.0f);
 		 } 
      }
 
