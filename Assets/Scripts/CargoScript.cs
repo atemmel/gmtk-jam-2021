@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CargoScript : MonoBehaviour
 {
-	public GameObject retryButton;
 	public GameObject explosionVfx;
 	public int maxHealth;
 	int currentHealth;
@@ -75,16 +74,11 @@ public class CargoScript : MonoBehaviour
 		CutTheRope(0);
 		CutTheRope(1);
 		_rigidbody.AddForce(Vector2.up * 10.0f);
-		Invoke("ShowRetryButton", 3.0f);
 	}
 
 	void CutTheRope(int i) {
 		var link = gameObject.transform.GetChild(i);
 		var toDisconnect = link.gameObject.transform.GetChild(0);
 		Destroy(toDisconnect.gameObject); 
-	}
-
-	void ShowRetryButton() {
-		retryButton.gameObject.SetActive(true);
 	}
 }
