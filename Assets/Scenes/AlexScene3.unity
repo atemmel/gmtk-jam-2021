@@ -2052,6 +2052,10 @@ PrefabInstance:
       propertyPath: linkToYank
       value: 
       objectReference: {fileID: 762278734}
+    - target: {fileID: 4288290980129960457, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
+      propertyPath: timeBetweenYanks
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4288290980129960458, guid: 8c5a4f0a1e93adb4dbdf6ddf55012769, type: 3}
       propertyPath: cargo
       value: 
@@ -2664,5 +2668,9 @@ PrefabInstance:
       propertyPath: linkToYank
       value: 
       objectReference: {fileID: 2057084686}
+    - target: {fileID: 7689194346110675573, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
+      propertyPath: timeBetweenYanks
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb0bccab61d8f4f46b09c912957343d9, type: 3}
