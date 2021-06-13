@@ -9,7 +9,6 @@ public class ZiggZaggyEnemyBehaviour : MonoBehaviour
 
     public float downSpeed;
     public float sideSpeed;
-    float timer = 0;
 
 	AudioSource shootSound;
 
