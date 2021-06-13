@@ -16,7 +16,7 @@ public class ZiggZaggyEnemyBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timer = Time.realtimeSinceStartup;
+       
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _rigidbody2D.velocity = new Vector2(sideSpeed, -downSpeed);
 		shootSound = GetComponent<AudioSource>();
@@ -31,14 +31,16 @@ public class ZiggZaggyEnemyBehaviour : MonoBehaviour
         }
 
         _rigidbody2D.velocity = new Vector2(sideSpeed, -downSpeed);
-
+        timer += Time.deltaTime;
         // Kulor som skickas
-        if (Time.realtimeSinceStartup - timer > 2)
+        
+        if(timer >= 2.0f)
         {
             var bull = Instantiate(bullet, transform.position, transform.rotation);
             var velocity = Vector2.down * 5;
             bull.GetComponent<Rigidbody2D>().velocity = velocity;
-            timer = Time.realtimeSinceStartup;
+            
+            timer = 0.0f;
         }
     }
 }
