@@ -132,7 +132,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6768895617744949833, guid: 654a898d45bd03748836b84e3af96133, type: 3}
       propertyPath: m_Text
-      value: Help
+      value: How to play
       objectReference: {fileID: 0}
     - target: {fileID: 6768895617744949834, guid: 654a898d45bd03748836b84e3af96133, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -280,7 +280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768895619329846568, guid: 654a898d45bd03748836b84e3af96133, type: 3}
       propertyPath: m_Text
-      value: Help
+      value: How to play
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 654a898d45bd03748836b84e3af96133, type: 3}
@@ -770,8 +770,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -11.29}
-  m_SizeDelta: {x: 356.5228, y: 197.2629}
+  m_AnchoredPosition: {x: 0, y: -58.526695}
+  m_SizeDelta: {x: 356.5228, y: 291.7363}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1320682956
 MonoBehaviour:
@@ -812,7 +812,10 @@ MonoBehaviour:
 
     Shoot: RMB
 
-    Yank: LMB'
+    Blue ship
+    yank: LMB
+
+    Red ship yank: Spacebar'
 --- !u!222 &1320682957
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1147,7 +1150,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6768895618309128113, guid: 654a898d45bd03748836b84e3af96133, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -160
+      value: -220
       objectReference: {fileID: 0}
     - target: {fileID: 6768895618309128113, guid: 654a898d45bd03748836b84e3af96133, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
